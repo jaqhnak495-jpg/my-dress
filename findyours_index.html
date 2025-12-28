@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My Dress Sewa Dress Wedding & Pesta Jabodetabek</title>
+<meta name="description" content="My Dress menyediakan jasa sewa dress wedding, gaun pengantin, kebaya, dan dress pesta di Jabodetabek. Koleksi eksklusif, harga terjangkau." />
+<meta name="keywords" content="sewa dress jabodetabek, sewa gaun pengantin, dress pesta, gaun pernikahan, kebaya, sewa dress wedding">
+<style>
+  /* Reset & Base */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #3a3a3a;
+    background: #fffaf7;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  button {
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+    background-color: #e76f51;
+    color: white;
+    padding: 0.6em 1.3em;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+  }
+  button:hover,
+  button:focus {
+    background-color: #d3543b;
+  }
+
+  /* Container */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  /* Header */
+  header {
+    background: #fff;
+    padding: 1em 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 2rem;
+    color: #e76f51;
+    letter-spacing: 2px;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.7em;
+  }
+  nav ul li a {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5em;
+    color: #555;
+    transition: color 0.3s ease;
+  }
+  nav ul li a:hover,
+  nav ul li a:focus {
+    color: #e76f51;
+  }
+
+  /* Hero Section with Slideshow */
+  .hero {
+    position: relative;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 0 1em;
+    overflow: hidden;
+  }
+
+  /* Background slides */
+  .hero-slide {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-size: cover;
+    background-position: center center;
+    opacity: 0;
+    animation: fadeSlide 24s infinite;
+    z-index: 0;
+  }
+  .hero-slide:nth-child(1) {
+    background-image: url('https://www.weddingchicks.com/wp-content/uploads/2014/07/ombre-bridesmaid-dresses-2.jpg');
+    animation-delay: 0s;
+  }
+  .hero-slide:nth-child(2) {
+    background-image: url('https://serviceapp.sgp1.cdn.digitaloceanspaces.com/public/images/642e4ffd0532ab92d7b6249684c48b0e3c5830d2df20f.png');
+    animation-delay: 6s;
+  }
+  .hero-slide:nth-child(3) {
+    background-image: url('https://w.wallhaven.cc/full/ym/wallhaven-ym7mdk.jpg');
+    animation-delay: 12s;
+  }
+  .hero-slide:nth-child(4) {
+    background-image: url('https://s-media-cache-ak0.pinimg.com/736x/ab/54/2d/ab542dd887ba3e5ec92190e22495644e.jpg');
+    animation-delay: 18s;
+  }
+
+  @keyframes fadeSlide {
+    0%  { opacity: 0; }
+    8%  { opacity: 1; }
+    25% { opacity: 1; }
+    33% { opacity: 0; }
+    100%{ opacity: 0; }
+  }
+
+  /* Overlay */
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(231, 111, 81, 0.45);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5em;
+    text-shadow: 2px 2px 9px rgba(0,0,0,0.4);
+  }
+  .hero p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1.3em;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.4);
+  }
+  .hero button {
+    font-size: 1.1rem;
+    padding: 0.8em 2em;
+  }
+
+  /* Products Section */
+  .products {
+    padding: 4em 0 2em;
+    background: #fff;
+  }
+  .products h2 {
+    text-align: center;
+    font-size: 2.7rem;
+    margin-bottom: 1em;
+    color: #e76f51;
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 2.2em;
+  }
+  .product-card {
+    background: #fff6f2;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(231, 111, 81, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+  }
+  .product-card:hover,
+  .product-card:focus-within {
+    transform: translateY(-6px);
+  }
+  .product-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  .product-info {
+    padding: 1.2em 1em 2em;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .product-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.4em;
+    color: #cb4a34;
+  }
+  .product-price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #a0432f;
+    margin-bottom: 1em;
+  }
+
+  /* About Section */
+  .about {
+    padding: 3em 1em 5em;
+    background: #fff0e9;
+    text-align: center;
+  }
+  .about h2 {
+    color: #e76f51;
+    font-size: 2.5rem;
+    margin-bottom: 0.7em;
+  }
+  .about p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #5a3e36;
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  /* Advantages Section */
+  .advantages {
+    padding: 4em 0 2em;
+    background: #fffaf7;
+  }
+  .advantages h2 {
+    text-align: center;
+    font-size: 2.7rem;
+    margin-bottom: 1em;
+    color: #e76f51;
+  }
+  .advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2em;
+    padding: 0 1em;
+  }
+  .advantage-card {
+    background: #fff6f2;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(231, 111, 81, 0.1);
+    padding: 1.5em;
+    text-align: center;
+  }
+  .advantage-card h3 {
+    font-size: 1.4rem;
+    color: #cb4a34;
+    margin-bottom: 0.6em;
+  }
+  .advantage-card p {
+    font-size: 1rem;
+    color: #5a3e36;
+  }
+
+  /* Blog Section */
+  .blog {
+    padding: 4em 0 2em;
+    background: #fff;
+  }
+  .blog h2 {
+    text-align: center;
+    font-size: 2.7rem;
+    margin-bottom: 1em;
+    color: #e76f51;
+  }
+  .blog-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 2.2em;
+    padding: 0 1em;
+  }
+  .blog-post-card {
+    background: #fff6f2;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(231, 111, 81, 0.15);
+    overflow: hidden;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+  }
+  .blog-post-card:hover {
+    transform: translateY(-5px);
+  }
+  .blog-post-card h3 {
+    font-size: 1.5rem;
+    color: #cb4a34;
+    margin-bottom: 0.8em;
+  }
+  .blog-post-card p {
+    font-size: 1rem;
+    color: #5a3e36;
+    margin-bottom: 1em;
+    flex-grow: 1;
+  }
+  .blog-post-card .read-more {
+    display: inline-block;
+    background-color: #e76f51;
+    color: white;
+    padding: 0.6em 1.2em;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+  }
+  .blog-post-card .read-more:hover,
+  .blog-post-card .read-more:focus {
+    background-color: #d3543b;
+  }
+
+  /* FAQ Section */
+  .faq-section {
+    padding: 4em 0 2em;
+    background: #fffaf7;
+  }
+  .faq-section h2 {
+    text-align: center;
+    font-size: 2.7rem;
+    margin-bottom: 1em;
+    color: #e76f51;
+  }
+  .faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1em;
+  }
+  .faq-item {
+    background: #fff6f2;
+    border-radius: 8px;
+    margin-bottom: 1em;
+    padding: 1.2em;
+    box-shadow: 0 2px 8px rgba(231, 111, 81, 0.08);
+  }
+  .faq-question {
+    font-weight: 600;
+    color: #cb4a34;
+    font-size: 1.1rem;
+    margin-bottom: 0.5em;
+  }
+  .faq-answer {
+    color: #5a3e36;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Contact Section */
+  .contact {
+    background: #fef5f1;
+    padding: 3em 1em 4em;
+    max-width: 700px;
+    margin: 3em auto 2em auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(231,111,81,0.15);
+  }
+  .contact h2 {
+    color: #e76f51;
+    font-size: 2.5rem;
+    margin-bottom: 1em;
+    text-align: center;
+  }
+  .contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+  }
+  .contact label {
+    font-weight: 600;
+    color: #a0432f;
+    margin-bottom: 0.3em;
+  }
+  .contact input,
+  .contact textarea {
+    padding: 0.75em 1em;
+    border: 2px solid #e76f51;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+  }
+  .contact textarea {
+    min-height: 120px;
+  }
+  .contact button {
+    align-self: center;
+    padding: 0.75em 2.5em;
+    font-size: 1.2rem;
+    background-color: #e76f51;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .contact button:hover,
+  .contact button:focus {
+    background-color: #d3543b;
+  }
+
+  /* Social Media Section */
+  .social-media {
+    max-width: 700px;
+    margin: 0 auto 3em auto;
+    text-align: center;
+  }
+  .social-media h2 {
+    color: #e76f51;
+    font-size: 2rem;
+    margin-bottom: 0.8em;
+  }
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    flex-wrap: wrap;
+  }
+  .social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .social-icons a:hover,
+  .social-icons a:focus {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+  .social-icons a img.social-logo {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+  }
+  .social-icons .facebook-link { background-color: #1877f2; }
+  .social-icons .facebook-link:hover { background-color: #166fe5; }
+  .social-icons .instagram-link { background-color: #e1306c; }
+  .social-icons .instagram-link:hover { background-color: #b12452; }
+  .social-icons .twitter-link { background-color: #000000; }
+  .social-icons .twitter-link:hover { background-color: #333333; }
+
+  /* Footer */
+  footer {
+    background: #cb4a34;
+    color: #fff;
+    padding: 2em 1em;
+    text-align: center;
+  }
+  footer p {
+    margin-bottom: 0.8em;
+    font-size: 0.95rem;
+  }
+
+  /* Floating WhatsApp Button */
+  .whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/124/124034.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+  }
+  .whatsapp-button:hover {
+    background-color: #128c7e;
+    transform: scale(1.05);
+  }
+  @media (max-width: 600px) {
+    .whatsapp-button {
+      width: 50px;
+      height: 50px;
+      bottom: 15px;
+      right: 15px;
+    }
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 900px) {
+    .profile {
+      flex-direction: column;
+    }
+  }
+  @media (max-width: 600px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+    .hero p {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 480px) {
+    .social-icons {
+      gap: 1em;
+    }
+    .social-icons a {
+      width: 45px;
+      height: 45px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav-container">
+    <div class="logo" tabindex="0">My Dress</div>
+    <nav>
+      <ul>
+        <li><a href="#hero" tabindex="0">Beranda</a></li>
+        <li><a href="#products" tabindex="0">Toko</a></li>
+        <li><a href="#advantages" tabindex="0">Keunggulan</a></li>
+        <li><a href="#about" tabindex="0">Tentang</a></li>
+        <li><a href="#blog" tabindex="0">Blog</a></li>
+        <li><a href="#faq" tabindex="0">FAQ</a></li>
+        <li><a href="#contact" tabindex="0">Kontak</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="hero" aria-label="Banner
