@@ -1,107 +1,531 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <!-- BASIC SEO -->
   <meta charset="UTF-8">
-  <title>My Dress | Sewa Dress Wedding & Pesta Jabodetabek</title>
-  <meta name="description" content="My Dress menyediakan layanan sewa dress wedding, gaun pesta, dan kebaya di Jabodetabek dengan koleksi eksklusif dan harga terjangkau.">
-  <meta name="keywords" content="sewa dress jabodetabek, sewa gaun pesta, sewa gaun pengantin, rental dress wedding">
-  <meta name="author" content="My Dress">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- OPEN GRAPH SEO -->
-  <meta property="og:title" content="My Dress - Sewa Dress Wedding & Pesta">
-  <meta property="og:description" content="Tampil elegan dengan layanan sewa dress wedding & pesta di Jabodetabek.">
-  <meta property="og:image" content="https://example.com/preview.jpg">
-  <meta property="og:type" content="website">
-
-  <!-- STRUCTURED DATA SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Store",
-    "name": "My Dress",
-    "url": "https://mydress.id",
-    "description": "Layanan sewa dress wedding dan pesta di Jabodetabek",
-    "address": {
-      "@type": "PostalAddress",
-      "addressRegion": "Jabodetabek",
-      "addressCountry": "ID"
-    }
-  }
-  </script>
-
+  <title>My Dress - Sewa Dress Eksklusif Jabodetabek untuk Wedding & Pesta</title>
+  <meta name="description" content="Sewa dress eksklusif untuk wedding, pesta, dan acara spesial di Jabodetabek. Koleksi dress berkualitas tinggi dengan harga terjangkau. Temukan dress impian Anda di My Dress.">
+  <meta name="keywords" content="sewa dress Jabodetabek, dress wedding, dress pesta, gaun pengantin, dress eksklusif, My Dress">
+  <meta name="author" content="My Dress">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mydress.com">
   <style>
-    body {font-family: Arial, sans-serif; margin:0; background:#fffaf7;}
-    header {background:#fff; padding:15px; box-shadow:0 2px 5px rgba(0,0,0,.1);}
-    nav ul {display:flex; list-style:none; gap:20px;}
-    nav a {font-weight:600;}
-    .hero {height:70vh; display:flex; align-items:center; justify-content:center; background:#e76f51; color:#fff; text-align:center;}
-    section {padding:60px 20px;}
-  </style>
-</head>
+    /* Reset & Base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #3a3a3a;
+      background: #fffaf7;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    button {
+      cursor: pointer;
+      border: none;
+      font-weight: 600;
+      background-color: #e76f51;
+      color: white;
+      padding: 0.6em 1.3em;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover,
+    button:focus {
+      background-color: #d3543b;
+    }
 
-<body>
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-<header>
-  <nav>
-    <ul>
-      <li><a href="#hero">Beranda</a></li>
-      <li><a href="#products">Produk</a></li>
-      <li><a href="#about">Tentang</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#contact">Kontak</a></li>
-    </ul>
-  </nav>
-</header>
+    /* Header */
+    header {
+      background: #fff;
+      padding: 1em 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 2rem;
+      color: #e76f51;
+      letter-spacing: 2px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.7em;
+    }
+    nav ul li a {
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.5em;
+      color: #555;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus {
+      color: #e76f51;
+    }
 
-<!-- HERO (H1 HANYA SATU) -->
-<section id="hero" class="hero">
-  <div>
-    <h1>Sewa Dress Wedding & Pesta Jabodetabek</h1>
-    <p>My Dress menyediakan koleksi dress eksklusif untuk wedding dan pesta.</p>
-  </div>
-</section>
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 0 1em;
+      overflow: hidden;
+    }
 
-<!-- PRODUK -->
-<section id="products">
-  <h2>Koleksi Dress Populer</h2>
+    /* Background slides */
+    .hero-slide {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-size: cover;
+      background-position: center center;
+      opacity: 0;
+      animation: fadeSlide 24s infinite;
+      z-index: 0;
+    }
+    .hero-slide:nth-child(1) {
+      background-image: url('https://www.weddingchicks.com/wp-content/uploads/2014/07/ombre-bridesmaid-dresses-2.jpg');
+      animation-delay: 0s;
+    }
+    .hero-slide:nth-child(2) {
+      background-image: url('https://serviceapp.sgp1.cdn.digitaloceanspaces.com/public/images/642e4ffd0532ab92d7b6249684c48b0e3c5830d2df20f.png');
+      animation-delay: 6s;
+    }
+    .hero-slide:nth-child(3) {
+      background-image: url('https://w.wallhaven.cc/full/ym/wallhaven-ym7mdk.jpg');
+      animation-delay: 12s;
+    }
+    .hero-slide:nth-child(4) {
+      background-image: url('https://s-media-cache-ak0.pinimg.com/736x/ab/54/2d/ab542dd887ba3e5ec92190e22495644e.jpg');
+      animation-delay: 18s;
+    }
 
-  <article>
-    <h3>Gaun Pengantin Ball Gown</h3>
-    <img src="gaun1.jpg" alt="Gaun Pengantin Ball Gown Putih">
-    <p>Sewa mulai Rp450.000</p>
-  </article>
+    @keyframes fadeSlide {
+      0%  { opacity: 0; }
+      8%  { opacity: 1; }
+      25% { opacity: 1; }
+      33% { opacity: 0; }
+      100%{ opacity: 0; }
+    }
 
-  <article>
-    <h3>Dress Pesta Elegan</h3>
-    <img src="dress2.jpg" alt="Dress pesta hitam elegan">
-    <p>Sewa mulai Rp380.000</p>
-  </article>
-</section>
+    /* Overlay */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(231, 111, 81, 0.45);
+      z-index: 1;
+    }
 
-<!-- ABOUT -->
-<section id="about">
-  <h2>Tentang My Dress</h2>
-  <p>My Dress adalah layanan sewa dress di Jabodetabek yang menyediakan gaun wedding dan pesta berkualitas premium.</p>
-</section>
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5em;
+      text-shadow: 2px 2px 9px rgba(0,0,0,0.4);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 1.3em;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.4);
+    }
+    .hero button {
+      font-size: 1.1rem;
+      padding: 0.8em 2em;
+    }
 
-<!-- FAQ -->
-<section id="faq">
-  <h2>Pertanyaan Umum</h2>
-  <h3>Bagaimana cara menyewa dress?</h3>
-  <p>Pilih dress, tentukan tanggal, dan lakukan pembayaran.</p>
-</section>
+    /* Products Section */
+    .products {
+      padding: 4em 0 2em;
+      background: #fff;
+    }
+    .products h2 {
+      text-align: center;
+      font-size: 2.7rem;
+      margin-bottom: 1em;
+      color: #e76f51;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 2.2em;
+    }
+    .product-card {
+      background: #fff6f2;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(231, 111, 81, 0.15);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover,
+    .product-card:focus-within {
+      transform: translateY(-6px);
+    }
+    .product-img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 1.2em 1em 2em;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .product-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.4em;
+      color: #cb4a34;
+    }
+    .product-price {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #a0432f;
+      margin-bottom: 1em;
+    }
 
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Hubungi Kami</h2>
-  <p>WhatsApp: <a href="https://wa.me/6289508779540">Klik di sini</a></p>
-</section>
+    /* Profile Section */
+    .profile {
+      background: #fff0e9;
+      padding: 3em 1em 4em;
+      max-width: 900px;
+      margin: 2em auto 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2em;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(231,111,81,0.15);
+    }
+    .profile img {
+      flex: 1 1 280px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    .profile-text {
+      flex: 2 1 480px;
+      color: #5a3e36;
+    }
+    .profile-text h2 {
+      color: #e76f51;
+      font-size: 2.4rem;
+      margin-bottom: 0.8em;
+    }
+    .profile-text p {
+      font-size: 1.15rem;
+      line-height: 1.5;
+    }
 
-<footer>
-  <p>© 2024 My Dress</p>
-</footer>
+    /* About Section */
+    .about {
+      padding: 3em 1em 5em;
+      background: #fff0e9;
+      text-align: center;
+    }
+    .about h2 {
+      color: #e76f51;
+      font-size: 2.5rem;
+      margin-bottom: 0.7em;
+    }
+    .about p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #5a3e36;
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
 
-</body>
-</html>
+    /* Blog Section */
+    .blog {
+      padding: 4em 0 2em;
+      background: #fff;
+    }
+    .blog h2 {
+      text-align: center;
+      font-size: 2.7rem;
+      margin-bottom: 1em;
+      color: #e76f51;
+    }
+    .blog-posts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+      gap: 2.2em;
+      padding: 0 1em;
+    }
+    .blog-post-card {
+      background: #fff6f2;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(231, 111, 81, 0.15);
+      overflow: hidden;
+      padding: 1.5em;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease;
+    }
+    .blog-post-card:hover {
+      transform: translateY(-5px);
+    }
+    .blog-post-card h3 {
+      font-size: 1.5rem;
+      color: #cb4a34;
+      margin-bottom: 0.8em;
+    }
+    .blog-post-card p {
+      font-size: 1rem;
+      color: #5a3e36;
+      margin-bottom: 1em;
+      flex-grow: 1;
+    }
+    .blog-post-card .read-more {
+      display: inline-block;
+      background-color: #e76f51;
+      color: white;
+      padding: 0.6em 1.2em;
+      border-radius: 20px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      align-self: flex-start;
+    }
+    .blog-post-card .read-more:hover,
+    .blog-post-card .read-more:focus {
+      background-color: #d3543b;
+    }
+
+    /* New Section Styles */
+    .advantages, .faq-section {
+      padding: 4em 0 2em;
+      background: #fffaf7;
+    }
+    .advantages h2, .faq-section h2 {
+      text-align: center;
+      font-size: 2.7rem;
+      margin-bottom: 1em;
+      color: #e76f51;
+    }
+    .advantages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2em;
+      padding: 0 1em;
+    }
+    .advantage-card {
+      background: #fff6f2;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(231, 111, 81, 0.1);
+      padding: 1.5em;
+      text-align: center;
+    }
+    .advantage-card h3 {
+      font-size: 1.4rem;
+      color: #cb4a34;
+      margin-bottom: 0.6em;
+    }
+    .advantage-card p {
+      font-size: 1rem;
+      color: #5a3e36;
+    }
+    .faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1em;
+    }
+    .faq-item {
+      background: #fff6f2;
+      border-radius: 8px;
+      margin-bottom: 1em;
+      padding: 1.2em;
+      box-shadow: 0 2px 8px rgba(231, 111, 81, 0.08);
+    }
+    .faq-question {
+      font-weight: 600;
+      color: #cb4a34;
+      font-size: 1.1rem;
+      margin-bottom: 0.5em;
+    }
+    .faq-answer {
+      color: #5a3e36;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+      background: #cb4a34;
+      color: #fff;
+      padding: 2em 1em;
+      text-align: center;
+    }
+    footer p {
+      margin-bottom: 0.8em;
+      font-size: 0.95rem;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.2em;
+      font-size: 1.4rem;
+    }
+    .social-links a {
+      color: white;
+      transition: color 0.3s ease;
+    }
+    .social-links a:hover,
+    .social-links a:focus {
+      color: #f9a28d;
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      background-image: url('https://cdn-icons-png.flaticon.com/512/124/124034.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 60%;
+    }
+    .whatsapp-button:hover {
+      background-color: #128c7e;
+      transform: scale(1.05);
+    }
+    @media (max-width: 600px) {
+      .whatsapp-button {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+      }
+    }
+
+    /* Contact Section */
+    .contact {
+      background: #fef5f1;
+      padding: 3em 1em 4em;
+      max-width: 700px;
+      margin: 3em auto 2em auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(231,111,81,0.15);
+    }
+    .contact h2 {
+      color: #e76f51;
+      font-size: 2.5rem;
+      margin-bottom: 1em;
+      text-align: center;
+    }
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2em;
+    }
+    .contact label {
+      font-weight: 600;
+      color: #a0432f;
+      margin-bottom: 0.3em;
+    }
+    .contact input,
+    .contact textarea {
+      padding: 0.75em 1em;
+      border: 2px solid #e76f51;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      resize: vertical;
+    }
+    .contact textarea {
+      min-height: 120px;
+    }
+    .contact button {
+      align-self: center;
+      padding: 0.75em 2.5em;
+      font-size: 1.2rem;
+      background-color: #e76f51;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .contact button:hover,
+    .contact button:focus {
+      background-color: #d3543b;
+    }
+
+    .social-media {
+      max-width: 700px;
+      margin: 0 auto 3em auto;
+      text-align: center;
+    }
+    .social-media h2 {
+      color: #e76f51;
+      font-size: 2rem;
+      margin-bottom: 0.8em;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5em;
+      flex-wrap: wrap;
+    }
+    .social-icons a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .social-icons a:hover,
+    .social-icons a:focus {
+      transform
